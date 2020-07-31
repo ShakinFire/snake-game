@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: rgb(61, 126, 61);
+}
+
+.whole-game {
+    position: relative;
+}
+
+.game-menu-wrapper {
+    height: 100vh;
+}
+
+.logo-wrapper {
+    padding-top: 10%;
+}
+
+.snake-image {
+    display: flex;
+    justify-content: center;
+}
+
+.game-name {
+    text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: white;
+}
+
+.game-wrapper {
+    display: none;
+    height: 100vh;
+}
+
+.logo-wrapper img {
+    width: 250px;
+    height: 200px;
+}
+
+.difficulty {
+    display: flex;
+    justify-content: center;
+}
+
+.difficulty-options {
+    position: relative;
+    width: 100px;
+    margin: 0 10px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+i {
+    border: solid rgb(255, 255, 255);
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+#easy, #normal, #hard {
+    position: absolute;
+}
+
+#normal, #hard {
+    opacity: 0;
+}
+
+.play {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+.play {
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    font-size: 15px;
+}
+
+@-webkit-keyframes pulsate {
+    0% { 
+        font-size: 15px;
+    }
+    50% { 
+        font-size: 16px;
+    }
+    100% { 
+        font-size: 15px;
+    }
+}
+
+.game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    display: flex;
+    z-index: 999;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.game-over-wrapper {
+    padding: 20px 40px 40px 40px;
+    background: rgb(160, 160, 160);
+    border-radius: 10px;
+}
+
+.game-over-title, .game-over-score, .game-over-action-button {
+    text-align: center;
+}
+
+.game-over-score {
+    margin-bottom: 10px;
+}

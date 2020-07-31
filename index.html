@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snake Game</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <div class="whole-game">
+            <div class="game-menu-wrapper">
+                <div class="logo-wrapper">
+                    <div class="snake-image">
+                        <img src="./img/snake-logo.png">
+                    </div>
+                    <h1 class="game-name">SNAKE GAME</h2>
+                </div>
+                <div class="difficulty">
+                    <span id="left-arrow"><i class="arrow left"></i></span>
+                    <div class="difficulty-options">
+                        <span id="easy">EASY</span>
+                        <span id="normal">NORMAL</span>
+                        <span id="hard">HARD</span>
+                    </div>
+                    <span id="right-arrow"><i class="arrow right"></i></span>
+                </div>
+                <p class="play">PRESS ENTER TO PLAY</p>
+            </div>
+            <div class="game-wrapper">
+                <canvas id="snake" width="608" height="608"></canvas>
+            </div>
+
+            <div class="game-over">
+                <div class="game-over-wrapper">
+                    <h1 class="game-over-title">
+                        GAME OVER!!!
+                    </h1>
+                    <div class="game-over-score">
+                        Your score is: 32
+                    </div>
+                    <div class="game-over-action-button">
+                        Press Enter to try again!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+        </script>
+        <script src="./snake.js"></script>
+    </body>
+</html>
