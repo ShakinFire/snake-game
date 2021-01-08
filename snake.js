@@ -106,6 +106,8 @@
             // Create the score var
 
             let score = 0;
+            let applesEaten = 0;
+            let pearsEaten = 0;
 
             // Control the snake
             let direction;
@@ -177,11 +179,13 @@
                 if (snakeX === food.x && snakeY === food.y) {
                     if (foodChance > 75) {
                         score += 2;
+                        pearsEaten += 1;
                         difficulty[currentDifficulty] -= 50;
                         setTimeout(() => {
                             difficulty[currentDifficulty] = EASY_SPEED;
                         }, 2000);
                     } else {
+                        applesEaten += 1;
                         score += 1;
                     }
                     const [x, y] = spawnFood();
@@ -209,7 +213,11 @@
                     snakeY < 3 * box || snakeY > 17 * box ||
                     collision(newHead, snake)) {
                     $('.game-over').css('visibility', 'visible');
-                    $('.game-over-score').html(`Your score is: ${score}`);
+                    $('.game-over-score').html(score);
+                    $('.fast-food-score').html(pearsEaten);
+                    $('.food-score').html(applesEaten);
+                    $('.fast-food-final-score').html(pearsEaten * 2);
+                    $('.food-final-score').html(applesEaten);
                     isGameOver = true;
                     return;
                 }
@@ -223,7 +231,6 @@
         };
 
         $(document).keypress((event) => {
-            console.log(event.keyCode);
             if (event.keyCode === 13 && isGameOver) {
                 $('.game-over').css('visibility', 'hidden');
                 start();
